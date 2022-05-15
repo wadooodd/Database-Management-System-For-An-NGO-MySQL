@@ -1,0 +1,8 @@
+Report folder contains all datasets of table in excel format.
+Report folder contains the detailed project report in .docx format.
+Report folder contains ER diagram in .png format
+
+Working Code folder contains the bootstrap/html forms of table.
+Working Code folder contains the php code for connecting database with front end.
+
+ngo.sql is the SQL file which will create and populate the database.
