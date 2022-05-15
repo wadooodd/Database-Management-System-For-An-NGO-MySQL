@@ -1,0 +1,65 @@
+USE dbproject;
+
+#Query 1 
+SELECT * 
+FROM student;
+
+# Query 2
+SELECT 	Motherid,Fatherid
+FROM parent
+WHERE Motherid IS NOT NULL AND Fatherid IS NOT NULL
+
+
+# Query 3
+SELECT *
+FROM caretaker
+GROUP BY Sid
+HAVING Parentid = NULL;
+
+# Query 4
+SELECT c.Caretakerid, c.sid, CaretakerName, s.Name
+FROM caretaker c JOIN student s
+ON(c.sid);
+
+# Query 5
+SELECT c.Caretakerid, c.sid, CaretakerName, s.Name, classid
+FROM caretaker c JOIN student s
+ON(c.sid)
+GROUP BY classid;
+
+# Query 6
+SELECT c.sessionid , c.Sid, c.Classid
+FROM class c
+ORDER BY sessionid DESC;
+
+# Query 7
+#SELECT c.Classid,Session_name,sessionid,Class_name,Sections,Sid,OrderNumber,Name,Age
+#FROM class c JOIN student s 
+#ON(c.Classid = s.Classid)
+#ORDER BY sessionid DESC
+
+SELECT c.sessionid , c.Sid, c.Classid
+FROM class c
+ORDER BY sessionid DESC;
+
+
+# Query 8
+SELECT h.Caretakerid , h.Hid, h.sessionid, s.Sid, s.OrderNumber, s.Name, s.Age, s.photo, s.Courseid
+FROM history h JOIN student s
+ON(h.hid)
+ORDER BY sessionid DESC;
+
+# Query 9
+SELECT *
+FROM caretaker 
+WHERE sid = (
+    SELECT sid
+    FROM student
+    WHERE age = 15
+)
+
+# Query 10
+update history of student
+UPDATE class
+SET session_name ="Autumn", Class_name = "Grade Four", Sections = "B"
+WHERE session_name REGEXP "Summer" AND Class_name REGEXP "Grade Three" AND Sections REGEXP "A" AND sessionid > 10
