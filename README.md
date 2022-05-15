@@ -29,7 +29,7 @@ It is a child entity of parent
 10.History
 It is an entity that keeps track of the history of a particular student, each history id represent a unit of time, it also has a sessionid which keeps track of the session of a particular student
 11.Class
-It is an entity which tells us about the class that a student belongs to and tells the display information regarding a class like section, class name and subject
+It is an entity which tells us about the class that a student belongs to and tells the display information regarding a class like section, class name and subject.
 
 
 
